@@ -1,4 +1,7 @@
+
+
 function PedidoEmpanada (){
+
     return(
         <>
                     <label>Gusto de Empanada</label>
@@ -16,3 +19,5 @@ function PedidoEmpanada (){
         </>
     )
 }
+
+export default PedidoEmpanada;

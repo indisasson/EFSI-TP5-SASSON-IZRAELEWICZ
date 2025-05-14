@@ -5,12 +5,10 @@ import './App.css'
 import Formulario from '../components/Formulario.jsx'
 
 function App() {
-  
-
   return (
     <>
       <div>
-        <Formulario/>
+        <Formulario />
       </div>
     </>
   )
