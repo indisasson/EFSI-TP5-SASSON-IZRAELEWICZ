@@ -31,7 +31,7 @@ function Formulario (){
        
     }
 
-    /* SEGUIR CON LO DE   { gustosEmpanadas.map((g, index) => (<PedidoEmpanada setEmpanadas={setGustosEmpanadas} empandas={gustosEmpanadas} i={index} />))}  CON FLECHA :)*/
+    /* SEGUIR CON LO DE  LAS LISTAS Y MAS ADELANTE VEMOS LO DEL USE STATE CON FLECHA :)*/
     
     return(
         <>
@@ -51,7 +51,7 @@ function Formulario (){
                         <option value="Depósito">Depósito</option>
                     </select>
                     
-                    { gustosEmpanadas.map((g, index) => (<PedidoEmpanada setEmpanadas={setGustosEmpanadas} empandas={gustosEmpanadas} i={index} />))} 
+                    { gustosEmpanadas.map((g, index) => (<PedidoEmpanada empa={g} i={index} />))} 
 
                     <input type="button" onClick={agregarEmpanada} value="Otra empanada" />
                     <button type="submit"> Enviar Pedido</button>

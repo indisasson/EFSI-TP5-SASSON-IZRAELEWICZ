@@ -1,14 +1,14 @@
 import { useState } from "react";
 
 
-function PedidoEmpanada ({setEmpanadas, i}) {
-    const [gusto, setGusto] = useState();
-    const [cantidad, setCantidad] = useState(0);
+function PedidoEmpanada ({empa}) {
+    //const [gusto, setGusto] = useState();
+    //const [cantidad, setCantidad] = useState(0);
 
     return(
         <>
                     <label>Gusto de Empanada</label>
-                    <select onChange={ (e) => setEmpanadas(valorActual => [] ) } id="1">
+                    <select onChange={ (e) => empa.gusto = e.target.value } id="1">
                         <option value="">Seleccione una opcion...</option>
                         <option value="Carne">Carne</option>
                         <option value="Jamón y queso">Jamon y queso</option>
