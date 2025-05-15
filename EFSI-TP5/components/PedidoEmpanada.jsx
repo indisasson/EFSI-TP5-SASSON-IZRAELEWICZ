@@ -1,12 +1,16 @@
+import { useState } from "react";
 
 
-function PedidoEmpanada (){
+function PedidoEmpanada ({setEmpanadas, i}) {
+    const [gusto, setGusto] = useState();
+    const [cantidad, setCantidad] = useState(0);
 
     return(
         <>
                     <label>Gusto de Empanada</label>
-                    <select name="gusto" id="1">
-                        <option value="Carne" selected>Carne</option>
+                    <select onChange={ (e) => setEmpanadas(valorActual => [] ) } id="1">
+                        <option value="">Seleccione una opcion...</option>
+                        <option value="Carne">Carne</option>
                         <option value="Jamón y queso">Jamon y queso</option>
                         <option value="Verdura">Verdura</option>
                         <option value="Humita">Humita</option>
@@ -15,7 +19,7 @@ function PedidoEmpanada (){
                     </select>
 
                     <label>Cantidad</label>
-                    <input type="number" max="999" min="1" step={1}/>
+                    <input onKeyUp={(e) => empa.cantidad = e.target.value} type="number" max="999" min="1" step={1}/>
         </>
     )
 }

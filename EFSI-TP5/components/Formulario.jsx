@@ -12,10 +12,8 @@ function Formulario (){
         }]
     });
     
-    /* NO ENTENDEMOS PORQUE NO SE ACTUALIZAAAAAAA, NO ENTENDEMOS EL USE STATEEEEEEEEEEEEEEE*/
     
-    const [gustosEmpanadas, setGustosEmpanadas] = useState([{
-    }]);
+    const [gustosEmpanadas, setGustosEmpanadas] = useState([{}]);
 
     const agregarPedido = (e) => {
         e.preventDefault();
@@ -23,7 +21,7 @@ function Formulario (){
         setPedido({
             nombre: e.target.nombre.value,
             sector: e.target.sector.value,
-            gustos: gustosEmpanadas,
+            gustos: [...gustosEmpanadas],
         });  
         
     }
@@ -32,6 +30,8 @@ function Formulario (){
         setGustosEmpanadas([...gustosEmpanadas, {}])
        
     }
+
+    /* SEGUIR CON LO DE   { gustosEmpanadas.map((g, index) => (<PedidoEmpanada setEmpanadas={setGustosEmpanadas} empandas={gustosEmpanadas} i={index} />))}  CON FLECHA :)*/
     
     return(
         <>
@@ -51,10 +51,9 @@ function Formulario (){
                         <option value="Depósito">Depósito</option>
                     </select>
                     
-                    { pedido.gustos.map(g => <PedidoEmpanada/>)}
-                    
-                    
-                    <button onClick={agregarEmpanada}>Otra empanada</button>
+                    { gustosEmpanadas.map((g, index) => (<PedidoEmpanada setEmpanadas={setGustosEmpanadas} empandas={gustosEmpanadas} i={index} />))} 
+
+                    <input type="button" onClick={agregarEmpanada} value="Otra empanada" />
                     <button type="submit"> Enviar Pedido</button>
 
                 </form>
