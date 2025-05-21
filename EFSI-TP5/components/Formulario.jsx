@@ -2,15 +2,8 @@ import { useActionState, useState } from "react";
 import PedidoEmpanada from "./PedidoEmpanada.jsx"
 
 
-function Formulario (){
-    const [pedido, setPedido] = useState({
-        nombre: "",
-        sector: "",
-        gustos: [{
-            gusto: "",
-            cantidad: 0
-        }]
-    });
+function Formulario ({pedido}){
+    
     
     
     const [gustosEmpanadas, setGustosEmpanadas] = useState([{}]);
@@ -18,7 +11,7 @@ function Formulario (){
     const agregarPedido = (e) => {
         e.preventDefault();
     
-        setPedido({
+        pedido ({
             nombre: e.target.nombre.value,
             sector: e.target.sector.value,
             gustos: [...gustosEmpanadas],
@@ -32,6 +25,16 @@ function Formulario (){
     }
 
     /* SEGUIR CON LO DE  LAS LISTAS Y MAS ADELANTE VEMOS LO DEL USE STATE CON FLECHA :)*/
+    
+    /*  
+        VA AL FINAL PARA VER SI ANDA, ADENTRO DEL RETURN:
+            <div>
+                Pedido actual de: { pedido.nombre}
+                sector: {pedido.sector}
+                gustos: {console.log(gustosEmpanadas)}
+            </div>
+            
+    */
     
     return(
         <>
@@ -52,20 +55,19 @@ function Formulario (){
                     </select>
                     
                     { gustosEmpanadas.map((g, index) => (<PedidoEmpanada empa={g} i={index} />))} 
+                    
 
                     <input type="button" onClick={agregarEmpanada} value="Otra empanada" />
                     <button type="submit"> Enviar Pedido</button>
 
                 </form>
+                
             </div>
-            <div>
-                Pedido actual de: { pedido.nombre}
-                sector: {pedido.sector}
-                gustos: {console.log(gustosEmpanadas)}
-            </div>
+            
+            
+           
         </>
     )
-
 }
 
 export default Formulario
