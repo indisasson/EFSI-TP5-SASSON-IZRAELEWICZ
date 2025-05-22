@@ -1,0 +1,35 @@
+.listado-container {
+    max-width: 550px;
+    width: 100%;
+    margin-left: 200px;
+    
+  }
+  
+  .card-pedido,
+  .card-total {
+    background-color: #ffe0b2;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 1.2rem 1.5rem;
+    color: #5d4037;
+    transition: box-shadow 0.3s ease;
+    
+  }
+  
+  .card-pedido:hover,
+  .card-total:hover {
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  }
+  
+  .card-total {
+    background-color: #ffd180;
+  }
+  
+  ul {
+    padding-left: 1.2rem;
+  }
+  
+  li {
+    margin-bottom: 0.5rem;
+  }
+  

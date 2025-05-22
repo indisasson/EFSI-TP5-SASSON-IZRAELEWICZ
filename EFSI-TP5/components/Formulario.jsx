@@ -1,10 +1,9 @@
 import { useActionState, useState } from "react";
 import PedidoEmpanada from "./PedidoEmpanada.jsx"
+import './Formulario.css'
 
 
 function Formulario ({pedido}){
-    
-    
     
     const [gustosEmpanadas, setGustosEmpanadas] = useState([{}]);
 
@@ -24,17 +23,7 @@ function Formulario ({pedido}){
        
     }
 
-    /* SEGUIR CON LO DE  LAS LISTAS Y MAS ADELANTE VEMOS LO DEL USE STATE CON FLECHA :)*/
     
-    /*  
-        VA AL FINAL PARA VER SI ANDA, ADENTRO DEL RETURN:
-            <div>
-                Pedido actual de: { pedido.nombre}
-                sector: {pedido.sector}
-                gustos: {console.log(gustosEmpanadas)}
-            </div>
-            
-    */
     
     return(
         <>

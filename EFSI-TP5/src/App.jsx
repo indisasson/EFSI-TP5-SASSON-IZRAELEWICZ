@@ -20,22 +20,19 @@ function App() {
   console.log(pedido)
 
  let recibopedido = (ped)=>{
-  
-  setPedido(ped)
+  setPedido(prev => [...prev, ped]);
  }
 
  console.log(pedido)
 
 
-  return (
-    <>
-      <div>
-        
-        <Formulario pedido={recibopedido} />
-       { <Listado mipedido={pedido}/>}
-      </div>
-    </>
-  )
+ return (
+  <div className="app-container">
+    <Formulario pedido={recibopedido} />
+    <Listado mipedido={pedido} />
+  </div>
+)
+
 }
 
 export default App
